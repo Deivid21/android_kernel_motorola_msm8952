@@ -181,14 +181,14 @@ int __ipa_generate_rt_hw_rule_v2_5(enum ipa_ip_type ip,
 	if (entry->hdr) {
 		hdr_entry = ipa_id_find(entry->rule.hdr_hdl);
 		if (!hdr_entry || hdr_entry->cookie != IPA_HDR_COOKIE) {
-			IPAERR_RL("Header entry already deleted\n");
+			IPAERR("Header entry already deleted\n");
 			return -EPERM;
 		}
 	} else if (entry->proc_ctx) {
 		hdr_proc_entry = ipa_id_find(entry->rule.hdr_proc_ctx_hdl);
 		if (!hdr_proc_entry ||
 			hdr_proc_entry->cookie != IPA_PROC_HDR_COOKIE) {
-			IPAERR_RL("Proc header entry already deleted\n");
+			IPAERR("Proc header entry already deleted\n");
 			return -EINVAL;
 		}
 	}
@@ -1180,14 +1180,14 @@ int __ipa_del_rt_rule(u32 rule_hdl)
 	if (entry->hdr) {
 		hdr_entry = ipa_id_find(entry->rule.hdr_hdl);
 		if (!hdr_entry || hdr_entry->cookie != IPA_HDR_COOKIE) {
-			IPAERR_RL("Header entry already deleted\n");
+			IPAERR("Header entry already deleted\n");
 			return -EPERM;
 		}
 	} else if (entry->proc_ctx) {
 		hdr_proc_entry = ipa_id_find(entry->rule.hdr_proc_ctx_hdl);
 		if (!hdr_proc_entry ||
 			hdr_proc_entry->cookie != IPA_PROC_HDR_COOKIE) {
-			IPAERR_RL("Proc header entry already deleted\n");
+			IPAERR("Proc header entry already deleted\n");
 			return -EINVAL;
 		}
 	}
@@ -1534,7 +1534,7 @@ static int __ipa_mdfy_rt_rule(struct ipa_rt_rule_mdfy *rtrule)
 	if (entry->hdr) {
 		hdr_entry = ipa_id_find(entry->rule.hdr_hdl);
 		if (!hdr_entry || hdr_entry->cookie != IPA_HDR_COOKIE) {
-			IPAERR_RL("Header entry already deleted\n");
+			IPAERR("Header entry already deleted\n");
 			return -EPERM;
 		}
 	}
